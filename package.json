@@ -1,0 +1,17 @@
+{
+    "buildNpmdoc":"connect-pg-simple",
+    "devDependencies": {
+        "connect-pg-simple": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "name":"npmdoc-connect-pg-simple",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-connect-pg-simple"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh"
+    },
+    "version": "0.0.1"
+}
