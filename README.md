@@ -1,9 +1,14 @@
-# api documentation for  [connect-pg-simple (v3.1.2)](https://github.com/voxpelli/node-connect-pg-simple#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-pg-simple.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-pg-simple) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-pg-simple.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-pg-simple)
+# npmdoc-connect-pg-simple
+
+#### api documentation for  [connect-pg-simple (v3.1.2)](https://github.com/voxpelli/node-connect-pg-simple#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-connect-pg-simple.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-connect-pg-simple) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-connect-pg-simple.svg)](https://travis-ci.org/npmdoc/node-npmdoc-connect-pg-simple)
+
 #### A simple, minimal PostgreSQL session store for Connect/Express
 
-[![NPM](https://nodei.co/npm/connect-pg-simple.png?downloads=true)](https://www.npmjs.com/package/connect-pg-simple)
+[![NPM](https://nodei.co/npm/connect-pg-simple.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/connect-pg-simple)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-connect-pg-simple%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-connect-pg-simple/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Pelle Wessman",
-        "email": "pelle@kodfabrik.se",
         "url": "http://kodfabrik.se/"
     },
     "bugs": {
@@ -54,13 +58,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "voxpelli",
-            "email": "pelle@kodfabrik.se"
+            "name": "voxpelli"
         }
     ],
     "name": "connect-pg-simple",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/voxpelli/node-connect-pg-simple.git"
@@ -74,16 +76,6 @@
     "version": "3.1.2"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module connect-pg-simple](#apidoc.module.connect-pg-simple)
-
-
-
-# <a name="apidoc.module.connect-pg-simple"></a>[module connect-pg-simple](#apidoc.module.connect-pg-simple)
 
 
 
