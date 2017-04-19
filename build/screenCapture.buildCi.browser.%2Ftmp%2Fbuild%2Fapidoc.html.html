@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/voxpelli/node-connect-pg-simple#readme"
-
-    >connect-pg-simple (v3.1.2)</a>
+    <a href="https://github.com/voxpelli/node-connect-pg-simple#readme">connect-pg-simple (v3.1.2)</a>
 </h1>
 <h4>A simple, minimal PostgreSQL session store for Connect/Express</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.connect-pg-simple">module connect-pg-simple</a><ol>
 
@@ -95,11 +88,11 @@
     Store.call(this, options);
 
     this.schemaName = options.schemaName || null;
-    this.tableName = options.tableName || &#x27;session&#x27;;
+    this.tableName = options.tableName || 'session';
 
     this.conString = options.conString || process.env.DATABASE_URL;
     this.ttl =  options.ttl;
-    this.pg = options.pg || require(&#x27;pg&#x27;);
+    this.pg = options.pg || require('pg');
     this.ownsPg = !options.pg;
 
     this.errorLog = options.errorLog || console.error.bind(console);
@@ -149,16 +142,16 @@
    */
 
   PGStore.prototype.pruneSessions = function (fn) {
-    this.query(&#x27;DELETE FROM &#x27; + this.quotedTable() + &#x27; WHERE expire &#x3c; to_timestamp($1)&#x27;, [currentTimestamp()], function (err) {
-      if (fn &#x26;&#x26; typeof fn === &#x27;function&#x27;) {
+    this.query('DELETE FROM ' + this.quotedTable() + ' WHERE expire &lt; to_timestamp($1)', [currentTimestamp()], function (err) {
+      if (fn &amp;&amp; typeof fn === 'function') {
         return fn(err);
       }
 
       if (err) {
-        this.errorLog(&#x27;Failed to prune sessions:&#x27;, err.message);
+        this.errorLog('Failed to prune sessions:', err.message);
       }
 
-      if (this.pruneSessionInterval &#x26;&#x26; !this.closed) {
+      if (this.pruneSessionInterval &amp;&amp; !this.closed) {
         if (this.pruneTimer) {
           clearTimeout(this.pruneTimer);
         }
@@ -175,10 +168,10 @@
    */
 
   PGStore.prototype.quotedTable = function () {
-    var result = &#x27;&#x22;&#x27; + this.tableName + &#x27;&#x22;&#x27;;
+    var result = '"' + this.tableName + '"';
 
     if (this.schemaName) {
-      result = &#x27;&#x22;&#x27; + this.schemaName + &#x27;&#x22;.&#x27; + result;
+      result = '"' + this.schemaName + '".' + result;
     }
 
     return result;
@@ -195,7 +188,7 @@
   PGStore.prototype.getExpireTime = function (maxAge) {
     var ttl = this.ttl;
 
-    ttl = ttl || (typeof maxAge === &#x27;number&#x27; ? maxAge / 1000 : oneDay);
+    ttl = ttl || (typeof maxAge === 'number' ? maxAge / 1000 : oneDay);
     ttl = Math.ceil(ttl + currentTimestamp());
 
     return ttl;
@@ -211,7 +204,7 @@
    */
 
   PGStore.prototype.query = function (query, params, fn) {
-    if (!fn &#x26;&#x26; typeof params === &#x27;function&#x27;) {
+    if (!fn &amp;&amp; typeof params === 'function') {
       fn = params;
       params = [];
     }
@@ -222,7 +215,7 @@
       } else {
         client.query(query, params || [], function (err, result) {
           done(err || false);
-          if (fn) { fn(err, result &#x26;&#x26; result.rows[0] ? result.rows[0] : false); }
+          if (fn) { fn(err, result &amp;&amp; result.rows[0] ? result.rows[0] : false); }
         });
       }
     });
@@ -231,13 +224,13 @@
   /**
    * Attempt to fetch session by the given `sid`.
    *
-   * @param {String} sid – the session id
-   * @param {Function} fn – a standard Node.js callback returning the parsed session object
+   * @param {String} sid â€“ the session id
+   * @param {Function} fn â€“ a standard Node.js callback returning the parsed session object
    * @access public
    */
 
   PGStore.prototype.get = function (sid, fn) {
-    this.query(&#x27;SELECT sess FROM &#x27; + this.quotedTable() + &#x27; WHERE sid = $1 AND expire &#x3e;= to_timestamp($2)&#x27;, [sid, currentTimestamp
+    this.query('SELECT sess FROM ' + this.quotedTable() + ' WHERE sid = $1 AND expire &gt;= to_timestamp($2)', [sid, currentTimestamp
 ()], function (err, data) {
       if (err) { return ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -252,3 +245,4 @@
     ]
 </div>
 </div>
+</body></html>
